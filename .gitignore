@@ -1,2 +1,6 @@
 .cpcache
 .idea/
+out/
+.DS_Store
+.clj-kondo/
+.lsp
