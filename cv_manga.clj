@@ -17,11 +17,11 @@
          (imwrite out)))
 
 (def cli-options
-  [["-i" "--input FILE" :id :input :default "" :validate [#(.exists (clojure.java.io/as-file %)) "input must be a file"]]
-   ["-o" "--output FILE" "Output file" :default "manga.png"]
+  [["-i" "--input FILE" :id :input :default "resources/cat.jpg" :validate [#(.exists (clojure.java.io/as-file %)) "input must be a file"]]
+   ["-o" "--output FILE" "Output file" :default "out/manga.png"]
    ["-h" "--help"]])
 
-(let [{:keys [options arguments errors summary]} (parse-opts *command-line-args* cli-options)]
+(let [{:keys [options _ errors summary]} (parse-opts *command-line-args* cli-options)]
   (if (:help options)
    (do (println "Usage: ./manga.clj") (println summary))
     (if (not (nil? errors))

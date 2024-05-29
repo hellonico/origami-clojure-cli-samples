@@ -1,5 +1,0 @@
-;; Origami Filters EDN: 1.46
-;; Generated: Wed May 15 10:08:04 JST 2024
-[{:aperture 3, :blur 7, :class origami.filters.cartoon.NewCartoon2, :kmeans 8, :lineSize 17}
- ;; "{:class origami.filters.brandnew.child.ChildLikeImage :radiusBound 2 :numberOfTouches 4 :zoomIn 10 :zoomOut 10 :combined false}"
- ]
