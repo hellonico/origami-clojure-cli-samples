@@ -18,24 +18,25 @@
 	(imwrite target output)))
 
 (def counter (atom 0))
-(defn timelapse[cam folder time-lapse picture-format]
+(defn timelapse[cam folder time-lapse picture-format date]
 	(.mkdir (clojure.java.io/as-file folder))
 	(u/on-shutdown #(println "Quitting timelapse with " @counter " pictures."))
 	(while true
 		(swap! counter inc)
 		(Thread/sleep (* 1000 time-lapse))
-    (take-one cam (str folder "/" (time/format (time/formatter  "yyyy-MM-dd-HH:mm:ss") (time/local-date-time))  "." picture-format))))
+    (take-one cam (str folder "/" (time/format (time/formatter date) (time/local-date-time))  "." picture-format))))
 
 (def cli-options
   [["-c" "--camera INDEX or EDN" "Video descriptor. Either camera index or an EDN map with properties." :default "0"]
    ["-d" "--dir DIR" "Folder where to store the pictures" :default "out"]
    ["-f" "--format JPG|PNG" "Format for the output pictures" :default "png"]
+   ["-o" "--output format" :default "yyyy-MM-dd-HH-mm-ss"]
    ["-l" "--lapse SECONDS" "Lapse between each pictures" :default 5 :parse-fn #(Integer/parseInt %)]
    ["-h" "--help"]])
 
 (let [{:keys [options arguments errors summary]} (parse-opts *command-line-args* cli-options)]
 	(if (:help options)
 	 (do (println "Usage: ./params.clj") (println summary))
-	 (let [{:keys [camera dir lapse format]} options]
+	 (let [{:keys [camera dir lapse format output]} options]
 	 	(println "Timelapse me with options" options)
-	 	(timelapse camera dir lapse format))))
+	 	(timelapse camera dir lapse format output))))
