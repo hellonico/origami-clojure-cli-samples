@@ -1,5 +1,5 @@
-;; Origami Filters EDN: 1.46
-;; Generated: Wed May 29 15:19:54 JST 2024
+;; Origami Filters EDN: 1.47
+;; Generated: Tue Jun 04 14:44:40 JST 2024
 [
 ;;{:class coffee.FakeFilter, :rotationAngle 2.0}
 
@@ -13,9 +13,9 @@
 
 ;;{:class origami.filters.BackgroundSubstractor, :learningRate 1.0, :showMask false, :useMOG2 false}
 
-;{:class origami.filters.BitwiseRed}
+;;{:class origami.filters.BitwiseRed}
 
-{:class origami.filters.BlackToBlue}
+;;{:class origami.filters.BlackToBlue}
 
 ;;{:class origami.filters.Canny, :inverted true, :threshold1 100, :threshold2 200}
 
@@ -223,6 +223,8 @@
 
 ;;{:shadowThreshold 0.5, :paletteName "sunrise", :varMax 75.0, :shadowValue 127, :paletteReversed false, :detectShadows true, :varThreshold 16.0, :complexityReductionThreshold 0.05000000074505806, :history 500, :varMin 4.0, :maxContour -1, :backgroundRatio 0.8999999761581421, :varThresholdGen 9.0, :NMixtures 5, :class origami.filters.brandnew.PinkForeground, :varInit 15.0}
 
+;;{:alpha 0.7, :beta 0.7, :class origami.filters.brandnew.PinkTilt, :color "indian_red", :gamma 10.0}
+
 ;;{:class origami.filters.brandnew.PixelSepia, :depth 20, :intensity 30}
 
 ;;{:class origami.filters.brandnew.RedBlack, :color0 "black", :color1 "red_1", :color2 "gray", :contourColor "white"}
@@ -243,23 +245,29 @@
 
 ;;{:class origami.filters.brandnew.SmallMats, :mainCols 3, :mainRows 4, :max 10000}
 
-;;{:class origami.filters.brandnew.Sobelo}
+;{:class origami.filters.brandnew.Sobelo}
 
-;;{:class origami.filters.brandnew.Vignetting}
+;{:class origami.filters.brandnew.Vignetting}
 
-;;{:class origami.filters.brandnew.art.Noisy, :noiseDev 80.0, :noiseMean 10.0, :ratio1 0.4}
+
+;{:sigmaColor 75, :blue 1.8 :blockSize 3, :maxCount 1, :kernelSize 7, :sigmaSpace 75, :ksize 7, :k 8, :c 5, :class origami.filters.brandnew.anime.Anime, :epsilon 1.0E-4, :d 9}
+
+;{:class origami.filters.brandnew.art.Noisy, :noiseDev 80.0, :noiseMean 10.0, :ratio1 0.4}
 
 ;;{:class origami.filters.brandnew.art.NoisyBlock}
 
 ;;{:blockSize 20, :class origami.filters.brandnew.art.NoisyBlockV2, :ratio 0.3}
 
-;;{:class origami.filters.brandnew.art.SlowArtFilter}
+;{:class origami.filters.brandnew.art.SlowArtFilter}
 
-;;{:ratio2 0.3, :min 85.0, :aperture 5, :sigmaSpace 75, :blur 7, :max 150.0, :class origami.filters.brandnew.art.SlowArtFilter2, :gradient true, :signmaColor 75, :d 9, :invert true}
+;{:ratio2 0.5, :min 200.0, :aperture 3, :sigmaSpace 75, :blur 67, :max 255.0, :class origami.filters.brandnew.art.SlowArtFilter2, :gradient true, :signmaColor 75, :d 31, :invert true}
 
-;;{:class origami.filters.brandnew.child.ChildLikeImage, :combined true, :numberOfTouches 20, :paletteName "sunrise", :paletteReversed false, :radiusBound 15, :zoomIn 3, :zoomOut 10}
+;;{:adjustColorPalette true, :attempts 3, :brightness 10.0, :class origami.filters.brandnew.art.UkiyoeStyle, :clusters 64, :maxCount 50, :saturation 10.0}
 
-;;{:class origami.filters.brandnew.queen.HotSpace, :lower 100, :upper 200}
+;{:class origami.filters.brandnew.child.ChildLikeImage, :combined true, :numberOfTouches 20, :paletteName "sunrise", :paletteReversed false, :radiusBound 15, :zoomIn 3, :zoomOut 10}
+
+;{:class origami.filters.brandnew.queen.HotSpace, :lower 5, :upper 50}
+{:class origami.filters.brandnew.FilmNoir}
 
 ;;{:class origami.filters.brandnew.queen.Queen$BlackWhite, :lower 10, :main "#FFFFFF", :sub "#000000", :upper 150}
 
@@ -319,7 +327,7 @@
 
 ;;{:class origami.filters.dip.GaussianFilter, :sigmaX 0, :size "11.0,11.0"}
 
-;;{:chosenGlyphOffset 0.0, :chosenGlyphPosition nil, :class origami.filters.doge.GlyphDetector, :foundRect false, :frameSize #object[org.opencv.core.Size 0x32a72c4 "0x0"]}
+;;{:chosenGlyphOffset 0.0, :chosenGlyphPosition nil, :class origami.filters.doge.GlyphDetector, :foundRect false, :frameSize #object[org.opencv.core.Size 0x65c17e38 "0x0"]}
 
 ;;{:class origami.filters.doge.LeviColorFilter, :color "RED", :threshold -1.0}
 
@@ -413,7 +421,7 @@
 
 ;;{:blockSize 20, :class origami.filters.video.sub.RandomBlue}
 
-;{:class origami.filters.video.sub.RandomNoise}
+;;{:class origami.filters.video.sub.RandomNoise}
 
 ;;{:class origami.filters.video.sub.RedTint}
 
