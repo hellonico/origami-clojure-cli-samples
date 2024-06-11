@@ -1,6 +1,5 @@
 ":";exec clj -M $(basename $0) $1 $2
 
-
 (require '[opencv4.core :as cv ])
 (require '[opencv4.video :as cvv ])
 (require '[progrock.core :as pr])

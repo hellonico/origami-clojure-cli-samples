@@ -1,4 +1,4 @@
-":";exec clj -M $(basename $0) $1 $2
+":";exec clj -M $0 "$@"
 
 (require '[opencv4.utils :as u])
 

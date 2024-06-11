@@ -1,4 +1,15 @@
-":";exec clj -M $(basename $0) "$@"
+#!/bin/sh
+#_(
+   DEPS='
+   {
+ 	:deps 
+   { org.clojure/tools.cli {:mvn/version "1.1.230"}
+   }}
+   '
+
+exec clj -Sdeps "$DEPS" -M "$0" "$@"
+
+)
 
 (require '[clojure.tools.cli :refer [parse-opts]])
 

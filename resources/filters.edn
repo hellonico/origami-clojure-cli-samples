@@ -1,7 +1,7 @@
 ;; Origami Filters EDN: 1.47
 ;; Generated: Tue Jun 04 14:44:40 JST 2024
 [
-;;{:class coffee.FakeFilter, :rotationAngle 2.0}
+;l:class coffee.FakeFilter, :rotationAngle 2.0}
 
 ;;{:class com.boylett.t.coincounter.CoinCounter}
 
@@ -17,13 +17,13 @@
 
 ;;{:class origami.filters.BlackToBlue}
 
-;;{:class origami.filters.Canny, :inverted true, :threshold1 100, :threshold2 200}
+;{:class origami.filters.Canny, :inverted true, :threshold1 100, :threshold2 200}
 
 ;;{:class origami.filters.ClojureFilter, :fn "(fn[mat] mat)"}
 
-;;{:class origami.filters.ColorFilter, :high 20, :low 0}
+;{:class origami.filters.ColorFilter, :high 20, :low 0}
 
-;;{:class origami.filters.ColorFilter$Blue, :high 240, :low 200}
+;{:class origami.filters.ColorFilter$Blue, :high 240, :low 200}
 
 ;;{:class origami.filters.ColorFilter$Pink, :high 320, :low 300}
 
@@ -33,9 +33,9 @@
 
 ;;{:class origami.filters.ColorMap$Autumn}
 
-;;{:class origami.filters.ColorMap$Bone}
+;{:class origami.filters.ColorMap$Bone}
 
-;;{:class origami.filters.ColorMap$Cividis}
+;{:class origami.filters.ColorMap$Cividis}
 
 ;;{:class origami.filters.ColorMap$Cool}
 
@@ -101,19 +101,19 @@
 
 ;;{:class origami.filters.HueSaturationValue$Lomo}
 
-;;{:class origami.filters.HueSaturationValue$Nashville}
+;{:class origami.filters.HueSaturationValue$Nashville}
 
-;;{:class origami.filters.HueSaturationValue$Pink}
+;{:class origami.filters.HueSaturationValue$Pink}
 
-;;{:alpha 3.0, :beta 0.4, :class origami.filters.Illumination}
+;{:alpha 5.0, :beta 0.4, :class origami.filters.Illumination}
 
-;;{:class origami.filters.Level, :n 100}
+;{:class origami.filters.Level, :n 110}
 
-;;{:class origami.filters.Mosaic, :factor 0.1}
+;{:class origami.filters.Mosaic, :factor 0.05}
 
 ;;{:class origami.filters.NoOPFilter}
 
-;;{:class origami.filters.PencilSketch, :gray false, :shade_factor 0.05, :sigma_r 0.07, :sigma_s 60.0}
+;{:class origami.filters.PencilSketch, :gray false, :shade_factor 0.05, :sigma_r 0.07, :sigma_s 60.0}
 
 ;;{:class origami.filters.Resize, :factor -1.0, :height -1.0, :width -1.0}
 
@@ -151,13 +151,13 @@
 ;;{:class origami.filters.brandnew.ArtisticFilter, :colorOverride "0.8,0.3,0.8,0.0", :gradient false, :gradientEnd "0.0,0.0,255.0,0.0", :gradientStart "255.0,255.0,255.0,0.0", :gradientWeight 0.3}
 
 ;Changing the contrast and brightness of an image
-;;{:alpha 2.0, :beta 0, :class origami.filters.brandnew.BasicLinear}
+;{:alpha 1.0, :beta 20, :class origami.filters.brandnew.BasicLinear}
 
-;;{:brightnessOffset 50, :center "100.0,100.0", :class origami.filters.brandnew.BrightCircle, :color "#FFFFFF", :radius 100}
+;{:brightnessOffset 20, :center "200.0,100.0", :class origami.filters.brandnew.BrightCircle, :color "#FFddFF", :radius 200}
 
-;;{:brightnessOffset 50, :center "100.0,100.0", :class origami.filters.brandnew.BrightCircle$WithHaar, :color "#FFFFFF", :maxSize 500, :minSize 300, :radius 100, :type "haar.frontalface"}
+;{:brightnessOffset 50, :center "100.0,100.0", :class origami.filters.brandnew.BrightCircle$WithHaar, :color "#FFFFFF", :maxSize 500, :minSize 300, :radius 100, :type "haar.frontalface"}
 
-;;{:blockSize 35, :c 10, :class origami.filters.brandnew.Brushed, :desiredColor "0.0,10.0,103.0,0.0", :kernelSize 17}
+{:blockSize 5, :c 7, :class origami.filters.brandnew.Brushed, :desiredColor "0.0,10.0,103.0,0.0", :kernelSize 7}
 
 ;;{:class origami.filters.brandnew.CatMulRom}
 
@@ -174,10 +174,10 @@
 
 ;;{:blurSize 0, :class origami.filters.brandnew.DiffusingLightWithROI, :contrastFix 75}
 
-;;{:class origami.filters.brandnew.FakeHDR, :colorAdaptation 0.0, :gamma 1.0, :intensity 0.0, :lightAdaptation 1.0}
+;{:class origami.filters.brandnew.FakeHDR, :colorAdaptation 1.8, :gamma 0.8, :intensity 3.0, :lightAdaptation 0.3}
 
 ;Gamma Correction
-;;{:class origami.filters.brandnew.GammaCorrection, :gamma 0.1}
+{:class origami.filters.brandnew.GammaCorrection, :gamma 0.2}
 
 ;;{:alpha 0.5, :beta 0.5, :blur 1.0, :class origami.filters.brandnew.Ghost, :gamma 0.0, :paper "paper2", :sigmaX 30.0}
 
@@ -256,18 +256,18 @@
 
 ;;{:class origami.filters.brandnew.art.NoisyBlock}
 
-;;{:blockSize 20, :class origami.filters.brandnew.art.NoisyBlockV2, :ratio 0.3}
+;{:blockSize 20, :class origami.filters.brandnew.art.NoisyBlockV2, :ratio 0.3}
 
 ;{:class origami.filters.brandnew.art.SlowArtFilter}
 
 ;{:ratio2 0.5, :min 200.0, :aperture 3, :sigmaSpace 75, :blur 67, :max 255.0, :class origami.filters.brandnew.art.SlowArtFilter2, :gradient true, :signmaColor 75, :d 31, :invert true}
 
-;;{:adjustColorPalette true, :attempts 3, :brightness 10.0, :class origami.filters.brandnew.art.UkiyoeStyle, :clusters 64, :maxCount 50, :saturation 10.0}
+;{:adjustColorPalette true, :attempts 3, :brightness 10.0, :class origami.filters.brandnew.art.UkiyoeStyle, :clusters 64, :maxCount 50, :saturation 10.0}
 
 ;{:class origami.filters.brandnew.child.ChildLikeImage, :combined true, :numberOfTouches 20, :paletteName "sunrise", :paletteReversed false, :radiusBound 15, :zoomIn 3, :zoomOut 10}
 
 ;{:class origami.filters.brandnew.queen.HotSpace, :lower 5, :upper 50}
-{:class origami.filters.brandnew.FilmNoir}
+;{:class origami.filters.brandnew.FilmNoir}
 
 ;;{:class origami.filters.brandnew.queen.Queen$BlackWhite, :lower 10, :main "#FFFFFF", :sub "#000000", :upper 150}
 
@@ -423,7 +423,7 @@
 
 ;;{:class origami.filters.video.sub.RandomNoise}
 
-;;{:class origami.filters.video.sub.RedTint}
+;{:class origami.filters.video.sub.RedTint}
 
 ;;{:class origami.filters.video.sub.ScanLines$Fat}
 
@@ -435,13 +435,13 @@
 
 ;;{:class origami.filters.video.sub.Vignetting}
 
-;;{:blue 1.0, :class origami.filters.xphoto.ChannelGains, :green 1.0, :red 1.0}
+;{:blue 1.0, :class origami.filters.xphoto.ChannelGains, :green 1.0, :red 1.3}
 
-;;{:class origami.filters.xphoto.DtcDenoising, :psize 6, :sigma 21.0}
+;{:class origami.filters.xphoto.DtcDenoising, :psize 6, :sigma 21.0}
 
-;;{:class origami.filters.xphoto.GrayWorldWB, :saturationThreshold 0.9}
+;;{:class origami.filters.xphoto.GrayWorldWB, :saturationThreshold 1.2}
 
-;;{:class origami.filters.xphoto.OilPainting, :code 45, :ratio 1, :size 10}
+;{:class origami.filters.xphoto.OilPainting, :code 55, :ratio 2, :size 17}
 
 ;;{:class origami.filters.xphoto.SimpleWB, :inputMax 255.0, :inputMin 0.0, :outputMax 255.0, :outputMin 0.0, :p 1.0}
 
