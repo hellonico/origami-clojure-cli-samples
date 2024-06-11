@@ -157,16 +157,17 @@
 
 ;{:brightnessOffset 50, :center "100.0,100.0", :class origami.filters.brandnew.BrightCircle$WithHaar, :color "#FFFFFF", :maxSize 500, :minSize 300, :radius 100, :type "haar.frontalface"}
 
-{:blockSize 5, :c 7, :class origami.filters.brandnew.Brushed, :desiredColor "0.0,10.0,103.0,0.0", :kernelSize 7}
 
-;;{:class origami.filters.brandnew.CatMulRom}
+;{:blockSize 5, :c 7, :class origami.filters.brandnew.Brushed, :desiredColor "0.0,10.0,103.0,0.0", :kernelSize 7}
+
+;{:class origami.filters.brandnew.CatMulRom}
 
 ;;{:class origami.filters.brandnew.ComicBubble, :cornerRadius 10, :fontScale 1.0, :padding 10, :rotationAngle 30.0, :text "Hello!", :thickness 2}
 
 ;Change the contrast with alpha and beta blending
 ;Default value of 1.5
 ;Default value of 10
-;;{:alpha 1.5, :beta 10.0, :class origami.filters.brandnew.ContrastFilter}
+;;{:alpha 2, :beta 10.0, :class origami.filters.brandnew.ContrastFilter}
 
 ;;{:alpha 0.5, :beta 0.5, :class origami.filters.brandnew.CrackedPaper, :gamma 0.0, :paper nil}
 
@@ -177,7 +178,7 @@
 ;{:class origami.filters.brandnew.FakeHDR, :colorAdaptation 1.8, :gamma 0.8, :intensity 3.0, :lightAdaptation 0.3}
 
 ;Gamma Correction
-{:class origami.filters.brandnew.GammaCorrection, :gamma 0.2}
+;{:class origami.filters.brandnew.GammaCorrection, :gamma 0.2}
 
 ;;{:alpha 0.5, :beta 0.5, :blur 1.0, :class origami.filters.brandnew.Ghost, :gamma 0.0, :paper "paper2", :sigmaX 30.0}
 
@@ -337,17 +338,17 @@
 
 ;;{:class origami.filters.inprogress.Fake3D$V3}
 
-;;{:class origami.filters.inprogress.Kandinsky}
+;{:class origami.filters.inprogress.Kandinsky}
 
-;;{:class origami.filters.inprogress.Kandinsky2}
+;{:class origami.filters.inprogress.Kandinsky2}
 
-;;{:class origami.filters.inprogress.ShadowFilter2}
+;{:class origami.filters.inprogress.ShadowFilter2}
 
 ;;{:class origami.filters.inprogress.SquareSplitter}
 
-;;{:class origami.filters.inprogress.Waves}
+;{:class origami.filters.inprogress.Waves}
 
-;;{:class origami.filters.instagram.Lark}
+{:class origami.filters.instagram.Lark}
 
 ;;{:class origami.filters.instagram.Mayfair}
 

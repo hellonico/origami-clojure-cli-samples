@@ -8,15 +8,16 @@
 	(filter_s)
 	(cv/imwrite output)))
 
+(def helper (u/script-helper *file*))
 (def cli-options
   [["-i" "--input FILE" :id :input :default "resources/cat.jpg" :validate [#(.exists (clojure.java.io/as-file %)) "input must be a file"]]
-   ["-f" "--filter FILTER or FILE" :default "resources/filters.edn"]
+   ["-f" "--filter FILTER or FILE" :default  (str (helper :parent) "/resources/filters.edn")]
    ["-o" "--output FILE" "Output file" :default (str "out/filtered.png")]
    ["-h" "--help"]])
 
 (let [{:keys [options _ errors summary]} (parse-opts *command-line-args* cli-options)]
   (if (:help options)
-   (do (println "Usage: ./filter.clj") (println summary))
+   (do (println "Usage: cv_filter.clj") (println summary))
     (if (not (nil? errors))
       (println errors)
       (let [{:keys [input filter output]} options]

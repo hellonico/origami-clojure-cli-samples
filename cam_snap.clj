@@ -9,7 +9,7 @@
    { origami/origami {:mvn/version "4.9.0-7-SNAPSHOT"}
      org.clojure/clojure {:mvn/version "1.11.3"}
      origami/filters {:mvn/version "1.47"}
-     clojure.java-time {:mvn/version "1.4.2"}
+     clojure.java-time/clojure.java-time {:mvn/version "1.4.2"}
      org.clojure/tools.cli {:mvn/version "1.1.230"}
    }}
    '

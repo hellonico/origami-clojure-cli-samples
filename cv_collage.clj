@@ -12,7 +12,7 @@
 
 (let [{:keys [options _ errors summary]} (parse-opts *command-line-args* cli-options)]
   (if (:help options)
-    (do (println "Usage: ./cv_collage.clj") (println summary))
+    (do (println "Usage: cv_collage.clj") (println summary))
     (if (not (nil? errors))
       (println errors)
       (let [{:keys [mat1 mat2 collage output]} options]
