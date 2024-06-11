@@ -1,5 +1,19 @@
-":";exec clj -M $(basename $0) "$@"
+#!/bin/sh
+#_(
 
+   DEPS='
+   {:mvn/repos
+   {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
+  :deps 
+   { origami/origami {:mvn/version "4.9.0-7"}
+     origami/filters {:mvn/version "1.47"}
+     org.clojure/tools.cli {:mvn/version "1.1.230"}
+   }}
+   '
+
+exec clj -Sdeps "$DEPS" -M "$0" "$@"
+
+)
 (require '[opencv4.core :as cv] '[opencv4.filter :as f] '[clojure.tools.cli :refer [parse-opts]])  
 
 (defn filtering [input filter_s output]
