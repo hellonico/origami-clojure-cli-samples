@@ -1,0 +1,1 @@
+{:device "rtsp://192.168.114.106:8080/h264_opus.sdp" :fn "resources/filters.edn"}

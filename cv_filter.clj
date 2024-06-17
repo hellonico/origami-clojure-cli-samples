@@ -5,8 +5,8 @@
    {:mvn/repos
    {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
   :deps 
-   { origami/origami {:mvn/version "4.9.0-7"}
-     origami/filters {:mvn/version "1.47"}
+   { origami/origami {:mvn/version "4.9.0-8"}
+     origami/filters {:mvn/version "1.48"}
      org.clojure/tools.cli {:mvn/version "1.1.230"}
    }}
    '
