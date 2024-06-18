@@ -7,7 +7,7 @@
   :deps 
    { origami/origami {:mvn/version "4.9.0-8"}
      org.clojure/clojure {:mvn/version "1.11.3"}
-     ;origami/filters {:mvn/version "1.48"}
+     origami/filters {:mvn/version "1.48"}
      org.clojure/tools.cli {:mvn/version "1.1.230"}
    }}
    '
