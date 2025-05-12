@@ -6,7 +6,7 @@
    {:mvn/repos
    {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
  	:deps 
-   { origami/origami {:mvn/version "4.9.0-8"}
+   { origami/origami {:mvn/version "4.11.0-3"}
      org.clojure/clojure {:mvn/version "1.11.3"}
      org.clojure/tools.cli {:mvn/version "1.1.230"}
      clojure.java-time/clojure.java-time {:mvn/version "1.4.2"}
