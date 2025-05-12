@@ -1,8 +1,23 @@
-":";exec clj -M $(basename $0) "$@"
+#!/bin/sh
+#_(
 
+   #_DEPS is same format as deps.edn. Multiline is okay.
+   DEPS='
+   {:mvn/repos
+   {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
+ 	:deps 
+   { origami/origami {:mvn/version "4.11.0-6"}
+     org.clojure/clojure {:mvn/version "1.11.3"}
+   }}
+   '
+
+exec clj -Sdeps "$DEPS" -M "$0" "$@"
+
+)
 ;
 ; Simple Script that turns a picture into a manga drawing
 ;
+
 
 (require 
   '[opencv4.core :as cv :refer [COLOR_RGB2GRAY THRESH_BINARY cvt-color! gaussian-blur! threshold! new-size imread imwrite dilate! CV_8UC1]] 
