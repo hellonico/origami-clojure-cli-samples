@@ -71,3 +71,5 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
              (println "Error in processing."))))
       (println "Not enough pictures taken.")))
   (println "Could not open camera."))
+
+(System/exit 0)
