@@ -16,7 +16,7 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
    [opencv4.utils :as u]
    [clojure.string :as str]
    [opencv4.core :refer :all])
- (:import [org.opencv.core Core]))
+ (:import [org.opencv.core Core Scalar]))
 
 (defn mean-average-bgr [mat]
   (let [_mean (new-matofdouble)]
@@ -62,11 +62,22 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
       (doseq [^long j (range 0 grid-x)]
         (let [square (submat org (new-rect (* j width) (* i height) width height))
               best   (first (find-closest square indexed))
-              img    (get-cache-image cache best width height)
-              sub    (submat dst (new-rect (* j width) (* i height) width height))]
+              img-cached (get-cache-image cache best width height)
+              img        (clone img-cached) ;; Clone to avoid polluting cache with color corrections
+              sub        (submat dst (new-rect (* j width) (* i height) width height))
+              
+              ;; Color Correction: Adjust tile mean color to match target area mean color
+              m-tgt (Core/mean square)
+              m-img (Core/mean img)
+              diff  (let [v1 (.val m-tgt) v2 (.val m-img)]
+                      (Scalar. (- (aget v1 0) (aget v2 0))
+                               (- (aget v1 1) (aget v2 1))
+                               (- (aget v1 2) (aget v2 2))))]
           
-          ;; Blend original (30%) and tile (70%) to preserve original colors better
-          (Core/addWeighted sub 0.3 img 0.7 0.0 sub)
+          ;; Apply color shift
+          (Core/add img diff img)
+          
+          (copy-to img sub)
           
           (swap! k inc)
           (print (str "\r" @k "/" total " (" (int (* 100.0 (/ @k total))) "%)"))
