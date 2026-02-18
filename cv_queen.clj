@@ -27,7 +27,7 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
 (defn crop-to-square [mat size]
   (let [w (.cols mat)
         h (.rows mat)
-        min-dim (min w h)
+        min-dim (clojure.core/min w h)
         x (int (/ (- w min-dim) 2))
         y (int (/ (- h min-dim) 2))
         cropped (submat mat (new-rect x y min-dim min-dim))]
@@ -82,10 +82,10 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
           
           mats (mapv imread inputs)]
       
-      (if (some empty? mats)
+      (if (some #(.empty %) mats)
         (println "Error: Could not read one or more inputs.")
-        (let [dims (map #(min (.cols %) (.rows %)) mats)
-              max-dim (apply max dims)
+        (let [dims (map #(clojure.core/min (.cols %) (.rows %)) mats)
+              max-dim (apply clojure.core/max dims)
               tile-size (int (* max-dim scale))]
 
           (println "Tile size:" tile-size "x" tile-size)
