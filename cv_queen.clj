@@ -44,7 +44,10 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
         fg-mat (new-mat (.size mat) CV_8UC3 fg-scalar)
         bg-mat (new-mat (.size mat) CV_8UC3 bg-scalar)
         
-        mask (cvt-color binary COLOR_GRAY2BGR)
+        ;; Fix: Use 3-arity cvt-color with explicit destination
+        mask (new-mat)
+        _ (cvt-color binary mask COLOR_GRAY2BGR)
+        
         inv-mask (new-mat)
         
         masked-bg (new-mat)
