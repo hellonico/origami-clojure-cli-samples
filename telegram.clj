@@ -4,7 +4,7 @@
     {:mvn/repos
      {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
      :deps
-     {origami/origami        {:mvn/version "4.9.0-8"}
+     {origami/origami        {:mvn/version "4.13.0-2-SNAPSHOT"}
       origami/filters        {:mvn/version "1.48"}
       ; Clojure 1.11 redefines some macros so back to 1.10
       ; https://clojureverse.org/t/tools-deps-test-runner-warnings/9548
