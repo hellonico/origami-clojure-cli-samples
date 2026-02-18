@@ -1,9 +1,17 @@
 #!/bin/sh
-#_(DEPS=' {:mvn/repos
+#_(
+
+
+DEPS='
+{:mvn/repos
            {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
            :deps
            {origami/origami {:mvn/version "4.13.0-2-SNAPSHOT"}
-            origami/filters {:mvn/version "1.48"}}} 'exec clj -Sdeps "$DEPS" -M "$0" "$@")
+            origami/filters {:mvn/version "1.48"}}}'
+
+exec clj -Sdeps "$DEPS" -M "$0" "$@"
+
+)
 (require '[opencv4.utils :as u])
 
 (defn java-filter [klass]
