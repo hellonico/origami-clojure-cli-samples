@@ -10,10 +10,11 @@
   (let [fi (.newInstance klass)]
     (fn [mat] (.apply fi mat))))
 
-(def f (java-filter origami.filters.Cartoon))
+(def f (java-filter origami.filters.cartoon.Cartoon))
 ; Other filters to try:
-; (def f (java-filter origami.filters.SunGlasses$Red))
-; (def f (java-filter origami.filters.Manga))
+; (def f (java-filter origami.filters.cartoon.Cartoon2))
+; (def f (java-filter origami.filters.cartoon.Manga))
+; (def f (java-filter origami.filters.instagram.SunGlasses$Red))
 
 (u/simple-cam-window
  (comp (java-filter origami.filters.FPS) f))
