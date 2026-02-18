@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
     --prompt="Pick a Clojure Example: " \
     --height=80% \
     --border \
-    --preview "awk '/^\)/{found=1; next} found{print}' {} | grep -v '^\(require'")
+    --preview "awk '/^\)/{found=1; next} found{print}' {} | grep -vF '(require'")
   [ -z "$SCRIPT" ] && echo "No example selected." && exit 0
 else
   SCRIPT=$1
