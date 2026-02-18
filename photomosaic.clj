@@ -14,7 +14,9 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
 (ns photomosaic
  (:require
    [opencv4.utils :as u]
-   [opencv4.core :refer :all]))
+   [clojure.string :as str]
+   [opencv4.core :refer :all])
+ (:import [org.opencv.core Core]))
 
 (defn mean-average-bgr [mat]
   (let [_mean (new-matofdouble)]
@@ -23,14 +25,12 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
         (mean-std-dev _mean (new-matofdouble)))
     _mean))
 
-(defn collect-pictures
-  ([top-folder] (collect-pictures top-folder "jpg"))
-  ([top-folder ext]
+(defn collect-pictures [top-folder]
    (->> top-folder
         clojure.java.io/as-file
         file-seq
-        (filter #(.endsWith (.getName %) ext))
-        (map #(.getPath %)))))
+        (filter #(re-matches #"(?i).*\.(jpg|jpeg|png)$" (.getName %)))
+        (map #(.getPath %))))
 
 (defn indexing [files for-size]
   (println "Indexing" (count files) "images...")
@@ -64,7 +64,10 @@ exec clj -Sdeps "$DEPS" -M "$0" "$@"
               best   (first (find-closest square indexed))
               img    (get-cache-image cache best width height)
               sub    (submat dst (new-rect (* j width) (* i height) width height))]
-          (copy-to img sub)
+          
+          ;; Blend original (30%) and tile (70%) to preserve original colors better
+          (Core/addWeighted sub 0.3 img 0.7 0.0 sub)
+          
           (swap! k inc)
           (print (str "\r" @k "/" total " (" (int (* 100.0 (/ @k total))) "%)"))
           (flush))))
