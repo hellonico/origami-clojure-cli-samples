@@ -1,12 +1,18 @@
 #!/bin/sh
-#_(DEPS='
-   {:mvn/repos
-    {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
-    :deps
-    {origami/origami {:mvn/version "4.13.0-2-SNAPSHOT"}
-     origami/filters {:mvn/version "1.48"}}} 'exec clj -Sdeps "$DEPS" -M "$0" "$@")
+#_(
+
+DEPS='
+{:mvn/repos
+ {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
+ :deps
+ {origami/origami {:mvn/version "4.13.0-2-SNAPSHOT"}
+  origami/filters {:mvn/version "1.48"}}}'
+
+exec clj -Sdeps "$DEPS" -M "$0" "$@"
+
+)
 (ns photomosaic
-  (:require
+ (:require
    [opencv4.utils :as u]
    [opencv4.core :refer :all]))
 
