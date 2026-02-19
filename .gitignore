@@ -4,4 +4,4 @@ out/
 .DS_Store
 .clj-kondo/
 .lsp
-t/
+output.png
